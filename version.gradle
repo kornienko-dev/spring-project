@@ -1,0 +1,9 @@
+ext {
+    versions = [
+            'querydsl': '5.1.0',
+            'jakartapersistenceapi': '3.2.0',
+            'jakartaannotationapi': '3.0.0',
+            'testcontainers': '1.20.1',
+            'springdoc': '1.8.0'
+    ]
+}

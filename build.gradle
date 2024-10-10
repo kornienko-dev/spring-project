@@ -1,0 +1,48 @@
+plugins {
+    id 'org.springframework.boot' version '3.3.3'
+    id 'io.spring.dependency-management' version '1.1.6'
+    id 'io.freefair.lombok' version '8.10'
+    id 'java'
+}
+
+apply from: 'version.gradle'
+
+group = 'com.kornienko'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project(':common-logging-starter')
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.security:spring-security-oauth2-client'
+    implementation 'org.springframework.security:spring-security-oauth2-jose'
+    implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+
+    implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.6.0'
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'org.postgresql:postgresql'
+    implementation 'org.springframework.data:spring-data-envers'
+    implementation 'org.liquibase:liquibase-core'
+
+    implementation "com.querydsl:querydsl-jpa:${versions.querydsl}:jakarta"
+    annotationProcessor "com.querydsl:querydsl-apt:${versions.querydsl}:jakarta"
+    annotationProcessor "jakarta.persistence:jakarta.persistence-api:${versions.jakartapersistenceapi}"
+    annotationProcessor "jakarta.annotation:jakarta.annotation-api:${versions.jakartaannotationapi}"
+
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation "org.testcontainers:postgresql:${versions.testcontainers}"
+}
+
+test {
+    useJUnitPlatform()
+}
