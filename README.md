@@ -2,7 +2,7 @@
 Обзорный проект, чтобы на практике использовать следующие технологии:
 - Spring Boot, Data, MVC, AOP, Security
 - Liquibase, Testcontainers и т.д.
-# Как запустить
+# Как запустить (лучше не стоит проект по ходу изучения для себя делал гы)
 1. Устанавливаем в докере `postgres:16-alpine` с username `admin`, password `admin`, port `5432`
 2. Запускаем приложение через [`ApplicationRunner`](src/main/java/com/kornienko/spring/ApplicationRunner.java), чтобы выполнились liquibase скрипты
 3. В бд выполняем скрипт [`data.sql`](src/test/resources/sql/data.sql) а также устанавливаем для всех пользователей пароль, например, {noop}123
